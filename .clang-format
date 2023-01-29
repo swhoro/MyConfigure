@@ -20,26 +20,28 @@ AllowShortFunctionsOnASingleLine: InlineOnly
 BreakBeforeBraces: Custom
 # 大括号换行，只有当BreakBeforeBraces设置为Custom时才有效，设置其他配置则下面不生效
 BraceWrapping:
-    AfterCaseLabel:  false
-    AfterClass:      false
+    AfterCaseLabel: false
+    AfterClass: false
     AfterControlStatement: Never
-    AfterEnum:       false
-    AfterFunction:   true
-    AfterNamespace:  true
+    AfterEnum: false
+    AfterFunction: false
+    AfterNamespace: true
     AfterObjCDeclaration: false
-    AfterStruct:     true
-    AfterUnion:      false
+    AfterStruct: true
+    AfterUnion: false
     AfterExternBlock: false
-    BeforeCatch:     false
-    BeforeElse:      false
+    BeforeCatch: false
+    BeforeElse: false
     BeforeLambdaBody: false
-    BeforeWhile:     false
-    IndentBraces:    false
+    BeforeWhile: false
+    IndentBraces: false
     SplitEmptyFunction: true
     SplitEmptyRecord: true
     SplitEmptyNamespace: true
 
 # 连续赋值等号对齐
-# AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveAssignments: Consecutive
 # 对齐操作符
 AlignOperands: Align
+# 成员访问限制符前面空格
+AccessModifierOffset: -4
