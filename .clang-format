@@ -3,7 +3,9 @@ Language: Cpp
 BasedOnStyle: LLVM
 
 #函数参数换行
-ColumnLimit: 100
+ColumnLimit: 130
+BinPackArguments: false
+BinPackParameters: false
 AllowAllParametersOfDeclarationOnNextLine: false
 AllowAllArgumentsOnNextLine: false
 AlignAfterOpenBracket: Align
@@ -12,9 +14,13 @@ AlignAfterOpenBracket: Align
 IndentWidth: 4
 TabWidth: 4
 UseTab: Never
+# 缩进预处理器
+IndentPPDirectives: BeforeHash
 # 连续的空行保留几行
 MaxEmptyLinesToKeep: 2
 
+AllowShortBlocksOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: InlineOnly
 # 在大括号前换行
 BreakBeforeBraces: Custom
@@ -25,9 +31,9 @@ BraceWrapping:
     AfterControlStatement: Never
     AfterEnum: false
     AfterFunction: false
-    AfterNamespace: true
+    AfterNamespace: false
     AfterObjCDeclaration: false
-    AfterStruct: true
+    AfterStruct: false
     AfterUnion: false
     AfterExternBlock: false
     BeforeCatch: false
@@ -40,7 +46,8 @@ BraceWrapping:
     SplitEmptyNamespace: true
 
 # 连续赋值等号对齐
-AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveDeclarations: AcrossComments
+AlignConsecutiveAssignments: AcrossComments
 # 对齐操作符
 AlignOperands: Align
 # 成员访问限制符前面空格
