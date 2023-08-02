@@ -34,7 +34,7 @@ fi
 # change oh-my-zsh theme
 ZSH_THEME=agnoster
 echo "change theme to $ZSH_THEME"
-sed -i "/^ZSH_THEME=/s/".*"/"$ZSH_THEME"/" ~/.zshrc
+sed -i "/^ZSH_THEME=/s/\".*\"/\"$ZSH_THEME\"/" ~/.zshrc
 
 ZSH_CLONE_PLUGINS=(zsh-users/zsh-syntax-highlighting marlonrichert/zsh-autocomplete)
 
