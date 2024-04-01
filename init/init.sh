@@ -54,7 +54,7 @@ install_zsh_plugin(){
     PLUGIN_NAME=$1
     PLUGINS_LINE=$(sed -n "/^plugins=/p" ~/.zshrc)
 
-    if ! echo $PLUGINS_LINE | grep " $PLUGIN_NAME[ \)]" >/dev/null; then
+    if ! echo $PLUGINS_LINE | grep "$PLUGIN_NAME" >/dev/null; then
         echo_installing $PLUGIN_NAME
         sed -i "/^plugins=/s/(\([^)]\+\))/(\1 $PLUGIN_NAME)/" ~/.zshrc;
     else
