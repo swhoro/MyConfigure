@@ -36,7 +36,7 @@ ZSH_THEME=agnoster
 echo "change theme to $ZSH_THEME"
 sed -i "/^ZSH_THEME=/s/\".*\"/\"$ZSH_THEME\"/" ~/.zshrc
 
-ZSH_CLONE_PLUGINS=(zsh-users/zsh-syntax-highlighting marlonrichert/zsh-autocomplete)
+ZSH_CLONE_PLUGINS=(zsh-users/zsh-syntax-highlighting marlonrichert/zsh-autocomplete zsh-users/zsh-autosuggestions)
 
 for plugin in ${ZSH_CLONE_PLUGINS[*]}; do
     plugin_name=$(echo $plugin | sed -n "s/\([^\/]*\)\/\([^\/]*\)/\2/p")
@@ -50,6 +50,8 @@ for plugin in ${ZSH_CLONE_PLUGINS[*]}; do
     fi
 done
 
+ZSH_PLUGINS=(z zsh-syntax-highlighting zsh-autocomplete zsh-autosuggestions)
+
 install_zsh_plugin(){
     PLUGIN_NAME=$1
     PLUGINS_LINE=$(sed -n "/^plugins=/p" ~/.zshrc)
@@ -62,8 +64,6 @@ install_zsh_plugin(){
     fi
 
 }
-
-ZSH_PLUGINS=(zsh-syntax-highlighting zsh-autocomplete z)
 
 for plugin in ${ZSH_PLUGINS[*]}; do
     install_zsh_plugin $plugin
